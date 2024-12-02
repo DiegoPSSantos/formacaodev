@@ -1,9 +1,5 @@
-<div class="
-    flex flex-col justify-center 
-    items-center min-h-screen gap-5
-    bg-black text-white
-">
-	<h1 class="text-3xl font-bold">Ordem dos Livros</h1>
+<h1 class="text-3xl font-bold">Ordem dos Livros</h1>
+<div class="flex gap-5">
     <a href="/autores">Autores</a>
+    <a href="/series">Séries</a>
 </div>
-

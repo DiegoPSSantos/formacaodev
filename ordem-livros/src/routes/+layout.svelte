@@ -1,6 +1,10 @@
 <script lang="ts">
-	import '../app.css';
-	let { children } = $props();
-</script>
+  import "../app.css";
+  import Pagina from "../components/template/Pagina.svelte";
 
-{@render children()}
+  let { children } = $props();
+</script>
+<Pagina>
+  {@render children()}
+</Pagina>
+
