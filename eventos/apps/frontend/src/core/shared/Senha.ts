@@ -14,5 +14,3 @@ export default class Senha {
     }
 
 }
-
-console.log(Senha.gerar());

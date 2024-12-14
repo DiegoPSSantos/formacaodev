@@ -25,6 +25,3 @@ export default class Data {
     }
 }
 
-console.log(Data.formatar(new Date()));
-console.log(Data.desformatar("2024-12-05T17:37"));
-
