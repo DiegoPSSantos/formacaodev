@@ -1,4 +1,4 @@
-import { CONSTANTES } from "@/core";
+import { CONSTANTES } from "@eventos/core";
 import { Righteous } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,4 +1,4 @@
-import { CONSTANTES, Convidado } from "@/core";
+import { CONSTANTES, Convidado } from "@eventos/core";
 
 export interface ConvidadoItemProps {
     convidado: Convidado;

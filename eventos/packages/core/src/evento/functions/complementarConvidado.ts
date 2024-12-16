@@ -14,7 +14,7 @@ export default function complementarConvidado(convidado: Partial<Convidado>): Co
     const convidadoAtualizado = {
         ...convidado,
         qtdeAcompanhantes: temAcompanhantes ? qtdeAcompanhantes : 0,
-        possuiAcompanhantes: temAcompanhantes
+        possuiAcompanhantes: !!temAcompanhantes
     } as Convidado;
 
     return convidadoAtualizado;

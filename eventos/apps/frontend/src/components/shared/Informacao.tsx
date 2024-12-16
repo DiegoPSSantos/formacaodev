@@ -1,5 +1,3 @@
-import { Evento } from "@/core/evento";
-
 export interface InformacaoProps {
     label: string;
     children: any;

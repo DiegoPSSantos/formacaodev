@@ -1,5 +1,5 @@
 import LogoGrande from "@/components/templates/LogoGrande";
-import { CONSTANTES, Evento } from "@/core";
+import { CONSTANTES, Evento } from "@eventos/core";
 import Link from "next/link";
 
 export default function Home() {
