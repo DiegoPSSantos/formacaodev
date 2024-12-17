@@ -1,1 +1,10 @@
 GET http://localhost:4000/eventos
+
+
+###
+GET http://localhost:4000/eventos/aq7t7eni34r-fwajo1tf59t-4c3e711irg2
+
+###
+GET http://localhost:4000/eventos/evento-js-avancado
+
+

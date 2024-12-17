@@ -1,111 +1,8 @@
 import { Evento } from '../evento'
 
-// ----------------IDS DE EVENTOS----------------
-
-// gson0ubiu3k-jez7kc737g-pscdfzn7qnq
-// ojvsb8u37v-p0lbcoodwv-6ac1ohjw7vo
-// cqfj23k1ep4-1k51cxfzi49-ty957vhth6f
-// 6km79a94d56-jajcprakbs-94iidnkdlp9
-// 6gyo3yb8h09-5r2jjaaxfyg-vke5vmsfbyo
-// xh99sexxckj-compjatdcgt-uhep74li8og
-// ncaaastb00f-7ny10kxmpvd-h0167jgvwvu
-// r4amznjxrul-udhdv1lnek-67vri1qzwf
-// dg0n1433ql-6xyl0yx1mtt-ommbqz6r61m
-// 1yr650qjf52h-qc3x3ikuxiq-ci3hwm5mb5k
-// dwq3fah8vxw-zxqoupbrqzr-5mk88cy05pb
-// bv8nt9ckl54-2965qgazpds-4l0jope4g0s
-// do6wbb930h-8d0kwe45dmm-g8kkilr5rk4
-// uut20hfgqns-twv3kviwyed-h9bo3k4zsmm
-// 29o34k1x58u-vzhcv11ado-xs7grmpsqa7
-// 4bqogmg0dj8-afj7uuzpr2f-52t8pkc1454
-// 2rnh5ul5v43-rj5uefvzp-jukwlg41b5m
-// rgy0ogu1wf-gnctxufmo1-kww6r3pxh9o
-// iaeyi0dheei-rq6mft6lw7-4bbhi5hznss
-// h49njk9jxcv-w2rwvby4ih8-u8r1bec7qjk
-// n6aj879w61-9tpuhci3cec-l6aik2chvxk
-// wuw2b6x5wzo-6vcffl9ozyc-8krcphoaon
-// 1pk3dq8rb9i-55dldyauf1c-jfulx1oh4y
-// hwrifmrq656-b9jyqmynumo-szldtrvwvla
-// s9oc8fjpsu9-ia1jsa2xm5h-xyebrbcmvcn
-// rg31ngjxs9-osmrhjxk4pc-lpj5yxdwze
-// sqv89wm65p-zccws0iqzi-fxx9dj3l085
-// x16dj2g2xf-wtxw60jcm5-mt4adnr5s0l
-// js9x3y2f7nd-x1yn5m86jl8-7b4rozhu33n
-// qcr4wc12xjl-4xru6umvw3v-lzp1uieeoym
-// 84xqwekljpe-cyu6l3cds7g-jbtkvxq7cf
-// yp2tuawo0n-pdtmbi3s0qo-63goof4gbms
-// qcknsal7d8-6innycgto62-ciaw6ilrudk
-// af2spj40jps-nnz0wcwm80s-ap34tu7hvl
-// w0t2hwwzma-nbhyq74qjc-uygaci34ee
-// hfv9dlfjh4c-hvos2kywbua-kz6t75jd29p
-// uu5dz4ltk2t-dhz66hfs0c7-igtcdvcbjpo
-// fl4zddazjzl-lav4fz49d7-kw4pano2emf
-// slnwugkbrc-qj3t2zdm9ua-izkrlazlg2o
-// s27313a5bf-xiove2n8rnf-dk9hrlbnonr
-// swatw1a7ogk-st24rwvtjw-aa8n1owbzx7
-// h5r86wrhr5l-j0xrqfrgowf-jj7jsmgcj5
-// 0rh4khbjy4u-rk0kimn4zel-32rdqsrwvk4
-// nyvpstmtt-x22ofjbfu8g-zwy4abt98lr
-// k0tar5rp8x-wfga0lauvh7-nrf2jfg7bv
-// kb56wofzt8-fdq1uziyvbd-by9nv9ctz8
-// lze54poud1k-l89rfi0ulz-e863xug65rt
-// edthfe68rr5-mbbjykl9p9-pk5xow2kly
-// db1c445lmkr-g5bbfz1qhk-2bc225uwant
-// af0dsmzj5vw-3hijx68hj1h-fqk2suhubet
-// hy5gi68rex-sjo7jrel5rf-pnkw0xp0adr
-// dijjtdow6nj-ye82z3ukpba-ihgoquf4r9h
-// ljogf36lr3s-xhunm9iu0lb-cg9cvdbhb5
-// 8f0wnfod3yp-y7xc952mw3i-9w29kua516d
-// po9emdsiybe-ahn0r2i2ikc-9prv7w9ngm
-// i1ieirl3qy-entqh1llt86-okcw5a35ghb
-// p9fj8enl5hf-o2gyorje49e-mzyplrzdzro
-// ug3hk3w5iwe-i5gldlmwrhb-0dk2369m0ag6
-// nty8q3liyw-lnr3miy56z-q4l56waolr
-// 82xnw0437bv-j7zxpwtftt-slxgru3h7gi
-// i2p5p40hgo-8i2khimsb6j-djotn42rusk
-// oywcxjgwkql-570fco9s22a-gldue3nlgga
-// dwusco18xar-ukxsu18qd49-do3a2od2ztc
-// gx4tjdsdo0a-pwufoxjyc5h-vlzfulfhezt
-// feeu5mq93v9-gbz2ost6et8-gmm6wgrqpf
-// 5rydt2iinhh-rg2dt0zb8z-vwapb090tto
-// xas2nfgxd-pxl5slgge7-r66nyhfecv
-// lgtnfnhyo-soj5lg807x9-7s05kgo2ech
-// crwnzmn7r0v-ixkc1o7gozl-j23xdkll72n
-// cagvmx4qitw-1itoiblue36-894w0fzdis7
-// pyd7wbwj0j-n5y7u7p5pck-u3j1zemcwja
-// k0qt4p7cgq-dc62vqj00jg-mj2vgsjhkd
-// fouvkyjahw8-sezjxn3pbkk-3dmg4mrh8lm
-// s0nwt5ar1e-t79cgvuvnv-3o7hv7mdfwt
-// wheklbiqmz-h175u1x4dsr-goi8ykgq6qm
-// 644fl7b0zs-5u76y1xs7qf-s7z31bv5hf
-// otzefaf45u8-a05lhyft5mi-5b6f0jjzxo
-// ewflbtbchlp-2ft10sj6ogr-rhsf5dvvl
-// v0gb5udk5zf-z4adfc8wpsn-pthq6hd162
-// fbqdidmmvi7-d9jkccflcgs-4ev08x8d1c5
-// hu01vqn9ee-57f8m5w1l7d-80bpbw9fjkr
-// 7k0f8lhbx9b-g59jr22eonk-ux4yml7f6d
-// shvq1cko1z-5wzfkkmex0a-dxoam5dkldv
-// 4105to2c1wn-loh1tihw9ok-cr3yv70zh2b
-// 3fweh72p5d1-d0jmwr5kcdj-4hb9v7yvrgs
-// 8hj63rru2ub-yvbu0kxclnf-7nd338r9uyx
-// 8rkagupx3ec-8f8koxbdkft-nke0fvxke3b
-// erjw6cuzx68-kda8c4wjy0b-ijazikgbrd
-// z1ujv2ima0q-omqqxzykg8-myoul68rhd
-// ar3ivr5jn7l-vmr7rijt8sg-cftveacnvdn
-// 6vma23bj3k6-m5ntyft7op-8c6tpo1ej28
-// iwp57zh9v5s-m5d6rb4kxc-5i3l0js0td
-// kygiunczkdo-vvycuzgzddg-98jeq2u42sv
-// r7lldwhua38-jej1o10iar-vp8riq00cx
-// je39smuhko-ilwzf5487d-sp8e22emel
-// ffsiuhczew9-yy51xgdo8kg-2d3saz7zhqy
-// 6ug3t3xb3rg-7x9l78ba8xk-3wv1x1h0kka
-// rx9b6zj91co-1o4ius63hb9-p5o5jlt831m
-// pomuz6skzwh-lfiq9wiezgn-lr6dxlzy4hl
-// aq7t7eni34r-fwajo1tf59t-4c3e711irg2
-
 const eventos: Evento[] = [
     {
-        id: "aq7t7eni34r-fwajo1tf59t-4c3e711irg2",
+        id: "7d34fd65-26b7-4588-a21b-ece90b74c3de",
         alias: 'evento-fullstack',
         senha: 'senha123',
         nome: 'Evento de Desenvolvimento Fullstack',
@@ -145,7 +42,7 @@ const eventos: Evento[] = [
         ],
     },
     {
-        id: "pomuz6skzwh-lfiq9wiezgn-lr6dxlzy4hl",
+        id: "156a1a54-97ae-44c5-bd52-d51fd4ebc11a",
         alias: 'evento-js-avancado',
         senha: 'js2024',
         nome: 'Workshop Avançado de JavaScript',
@@ -176,7 +73,7 @@ const eventos: Evento[] = [
         ],
     },
     {
-        id: "rx9b6zj91co-1o4ius63hb9-p5o5jlt831m",
+        id: "7482a0e8-0d9a-4550-b25c-0018e85d35c2",
         alias: 'evento-dev-frontend',
         senha: 'front123',
         nome: 'Bootcamp de Desenvolvimento Frontend',
@@ -215,7 +112,7 @@ const eventos: Evento[] = [
         ],
     },
     {
-        id: "ffsiuhczew9-yy51xgdo8kg-2d3saz7zhqy",
+        id: "d8e6fe80-447b-4b65-bdb0-1dce5eb6536c",
         alias: 'casamento-alberto-marina',
         senha: 'casamento2024',
         nome: 'Casamento do Alberto e Marina',
@@ -247,7 +144,7 @@ const eventos: Evento[] = [
         ],
     },
     {
-        id: "je39smuhko-ilwzf5487d-sp8e22emel",
+        id: "2f30e727-bb59-487a-baed-accaf6ddbcff",
         alias: 'aniversario-joao',
         senha: 'joao2024',
         nome: 'Aniversário do João - 30 Anos',
@@ -279,7 +176,7 @@ const eventos: Evento[] = [
         ],
     },
     {
-        id: "r7lldwhua38-jej1o10iar-vp8riq00cx",
+        id: "e1eb98b4-c861-480c-9488-b6cae33938e5",
         alias: 'inauguracao-loja-estrela',
         senha: 'estrela2024',
         nome: 'Inauguração da Loja Estrela',
@@ -311,7 +208,7 @@ const eventos: Evento[] = [
         ],
     },
     {
-        id: "6ug3t3xb3rg-7x9l78ba8xk-3wv1x1h0kka",
+        id: "00824d19-1584-4b17-91c8-5d129cf745bf",
         alias: 'reuniao-familia-oliveira',
         senha: 'familia2024',
         nome: 'Reunião da Família Oliveira',
