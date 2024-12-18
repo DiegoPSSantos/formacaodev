@@ -9,7 +9,3 @@ export default class Id {
         return validate(id);
     }
 }
-
-for (let i = 0; i < 100; i++) {
-    console.log(Id.novo());
-}
