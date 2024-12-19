@@ -5,7 +5,7 @@ GET http://localhost:4000/eventos
 GET http://localhost:4000/eventos/00824d19-1584-4b17-91c8-5d129cf745bf
 
 ###
-GET http://localhost:4000/eventos/evento-js-avancado
+GET http://localhost:4000/eventos/reuniao-familia-oliveira
 
 ###
 GET http://localhost:4000/eventos/validar/evento-js-avancado/156a1a54-97ae-44c5-bd52-d51fd4ebc11a
@@ -15,12 +15,12 @@ POST http://localhost:4000/eventos/acessar
 Content-Type: application/json
 
 {
-    "id": "7d34fd65-26b7-4588-a21b-ece90b74c3de",
-    "senha": "senha12"
+    "id": "156a1a54-97ae-44c5-bd52-d51fd4ebc11a",
+    "senha": "js2024"
 }
 
 ###
-POST http://localhost:4000/eventos/evento-js-avancado/convidado
+POST http://localhost:4000/eventos/reuniao-familia-oliveira/convidado
 Content-Type: application/json
 
 {
@@ -31,6 +31,40 @@ Content-Type: application/json
     "possuiAcompanhantes": true,
     "qtdeAcompanhantes": 10
 }
+
+###
+POST http://localhost:4000/eventos
+Content-Type: application/json
+
+{
+    "alias": "oscar-2024",
+    "nome": "Cerimônia do Oscar 2024",
+    "data": "2025-02-10T23:00",
+    "local": "Hollywood",
+    "descricao": "Evento de comemoração do Oscar 2024, maior evento do mundo de cinema",
+    "senha": "frameworks654",
+    "imagem": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+    "imagemBackground": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+    "publicoEsperado": 670,
+    "convidados": [
+        {
+            "nome": "Leonardo de Caprio",
+            "email": "dicaprio@gmail.com",
+            "confirmado": true,
+            "possuiAcompanhantes": true,
+            "qtdeAcompanhantes": 11
+        },
+        {
+            "nome": "Angelina Jolie",
+            "email": "ajolie@gmail.com",
+            "confirmado": true,
+            "possuiAcompanhantes": true,
+            "qtdeAcompanhantes": 2
+        }
+    ]
+}
+
+
 
 
 

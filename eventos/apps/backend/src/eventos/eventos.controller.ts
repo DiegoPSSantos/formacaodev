@@ -1,8 +1,11 @@
-import { Evento, eventos, Data, Id, Convidado } from '@eventos/core';
+import { Evento, eventos, Data, Id, Convidado, complementarEvento, complementarConvidado } from '@eventos/core';
 import { Body, Controller, Get, NotFoundException, Param, Post } from '@nestjs/common';
+import { EventoPrisma } from './evento.prisma';
 
 @Controller('eventos')
 export class EventosController {
+
+    constructor(private readonly repository: EventoPrisma) {}
 
 
     private serializar(evento:Evento) {
@@ -23,9 +26,13 @@ export class EventosController {
 
     @Post('acessar')
     async acessarEvento(@Body() dados:{ id: string, senha: string }) {
-        const evento = eventos.find(evento => evento.id === dados.id && evento.senha === dados.senha);
+        const evento = await this.repository.buscarPorId(dados.id);
+
+        if (!evento) {
+            throw new Error('Evento não encontrado');
+        }
         
-        if(!evento) {
+        if(evento.senha !== dados.senha) {
             throw new Error('A senha não corresponde ao evento');
         }
 
@@ -34,32 +41,49 @@ export class EventosController {
 
     @Get()
     async getEventos() {
+        const eventos = await this.repository.buscarTodos();
         return eventos.map(this.serializar);
     }
 
     @Get(':idOuAlias')
     async getEvento(@Param('idOuAlias') idOuAlias:string) {
+        let evento:Evento;
         if(Id.valido(idOuAlias)) {
-            return this.serializar(eventos.find(e => e.id === idOuAlias));
+            evento = await this.repository.buscarPorId(idOuAlias, true);
         } else {
-            return this.serializar(eventos.find(e => e.alias === idOuAlias));
+            evento = await this.repository.buscarPorAlias(idOuAlias, true);
         }
+        return this.serializar(evento);
     }
 
     @Get('validar/:alias/:id')
     async validarAlias(@Param('alias') alias:string, @Param('id') id:string) {
-        const evento = eventos.find(e => e.alias === alias);
+        const evento = await this.repository.buscarPorAlias(alias, true);
         // Caso não exista o evento ele é válido ou o id do evento é igual ao id passado como parâmetro
         return { valido: !evento || evento.id === id };
     }
 
+    @Post()
+    async salvarEvento(@Body() evento: Evento) {
+        const eventoCadastrado = await this.repository.buscarPorAlias(evento.alias);
+        
+        if (eventoCadastrado && eventoCadastrado.id !== evento.id) {
+            throw new Error('Já existe um evento com este alias');
+        }
+
+        const eventoCompleto = complementarEvento(this.deserializar(evento));
+        await this.repository.salvar(eventoCompleto);
+    }
+
     @Post(':alias/convidado')
     async salvarConvidado(@Param('alias') alias: string, @Body() convidado: Convidado) {
-        const evento = eventos.find(e => e.alias === alias);
+        const evento = await this.repository.buscarPorAlias(alias);
+
         if(!evento) {
             throw new Error('Evento não encontrado');
         }
-        evento.convidados.push(convidado);
-        return this.serializar(evento);
+        
+        const convidadoCompleto = complementarConvidado(convidado); 
+        await this.repository.salvarConvidado(evento, convidadoCompleto);
     }
 }
