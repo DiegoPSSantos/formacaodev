@@ -1,5 +1,5 @@
 import { Evento, eventos, Data, Id, Convidado, complementarEvento, complementarConvidado } from '@eventos/core';
-import { Body, Controller, Get, NotFoundException, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, NotFoundException, Param, Post } from '@nestjs/common';
 import { EventoPrisma } from './evento.prisma';
 
 @Controller('eventos')
@@ -29,11 +29,11 @@ export class EventosController {
         const evento = await this.repository.buscarPorId(dados.id);
 
         if (!evento) {
-            throw new Error('Evento não encontrado');
+            throw new HttpException('Evento não encontrado', HttpStatus.BAD_REQUEST);
         }
         
         if(evento.senha !== dados.senha) {
-            throw new Error('A senha não corresponde ao evento');
+            throw new HttpException('A senha não corresponde ao evento', HttpStatus.BAD_REQUEST);
         }
 
         return this.serializar(evento);
@@ -68,7 +68,7 @@ export class EventosController {
         const eventoCadastrado = await this.repository.buscarPorAlias(evento.alias);
         
         if (eventoCadastrado && eventoCadastrado.id !== evento.id) {
-            throw new Error('Já existe um evento com este alias');
+            throw new HttpException('Já existe um evento com este alias', HttpStatus.BAD_REQUEST);
         }
 
         const eventoCompleto = complementarEvento(this.deserializar(evento));
@@ -80,7 +80,7 @@ export class EventosController {
         const evento = await this.repository.buscarPorAlias(alias);
 
         if(!evento) {
-            throw new Error('Evento não encontrado');
+            throw new HttpException('Evento não encontrado', HttpStatus.BAD_REQUEST);
         }
         
         const convidadoCompleto = complementarConvidado(convidado); 

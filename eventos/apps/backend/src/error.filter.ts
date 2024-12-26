@@ -15,6 +15,8 @@ export class ErrorFilter implements ExceptionFilter {
 
         res.status(status).json({
             statusCode: status,
+            timestamp: new Date().toISOString(),
+            path: req.url,
             message: exception.message
         });
     };
